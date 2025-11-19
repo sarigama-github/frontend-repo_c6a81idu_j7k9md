@@ -3,47 +3,49 @@ import { motion } from 'framer-motion'
 const examples = [
   {
     title: 'Onboarding Conversion +18%',
-    summary: 'Led a 4-week sprint to simplify signup flow for a SaaS tool. Reduced steps from 7 to 3, introducing progressive profiling and social auth.',
-    metrics: ['+18% conversion', '-22% time-to-value', '+9 NPS'],
+    summary: 'Simplified signup from 7 to 3 steps with progressive profiling and social auth.',
+    metrics: ['+18% conversion', '-22% TTV', '+9 NPS'],
+    bg: 'url(https://images.unsplash.com/photo-1629380321590-3b3f75d66dec?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwcG90dGVyeSUyMGhhbmRtYWRlfGVufDB8MHx8fDE3NjM1MTI1ODN8MA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80)'
   },
   {
     title: 'Mobile Retention Initiative',
-    summary: 'Partnered with data to identify week-1 drop-offs. Shipped habit-forming nudges and a lightweight checklist.',
+    summary: 'Introduced habit nudges and a launch checklist based on week-1 insights.',
     metrics: ['+11% D7 retention', '75% task completion'],
+    bg: 'url(https://images.unsplash.com/photo-1629380321590-3b3f75d66dec?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwcG90dGVyeSUyMGhhbmRtYWRlfGVufDB8MHx8fDE3NjM1MTI1ODN8MA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80)'
   },
   {
     title: 'Pricing & Packaging Refresh',
-    summary: 'Ran user interviews and price testing. Introduced a usage-based tier, improving self-serve ARPU.',
-    metrics: ['+16% ARPU', '+12% self-serve revenue'],
+    summary: 'Ran interviews and price tests; launched a usage-based tier to boost ARPU.',
+    metrics: ['+16% ARPU', '+12% revenue'],
+    bg: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop)'
   },
 ]
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(600px_200px_at_20%_20%,rgba(99,102,241,0.08),transparent),radial-gradient(600px_200px_at_80%_60%,rgba(56,189,248,0.07),transparent)]" />
+    <section id="projects" className="relative py-16">
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="mb-10 flex items-center justify-between">
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Highlighted Projects</h2>
-          <span className="text-blue-200/70 text-sm">Sample work to showcase approach</span>
+        <div className="mb-8 flex items-end justify-between">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Highlighted Projects</h2>
+          <span className="text-slate-500 text-sm">Sample work to showcase approach</span>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {examples.map((p, i) => (
             <motion.div
               key={p.title}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
+              viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group rounded-3xl border border-white/10 bg-slate-900/60 p-6 backdrop-blur-xl hover:border-blue-400/30 transition-all"
+              className="group rounded-3xl border border-white bg-white/70 p-5 backdrop-blur-xl hover:shadow-xl transition-all"
             >
-              <div className="h-36 rounded-2xl bg-gradient-to-br from-slate-700 to-slate-800 mb-5 group-hover:from-indigo-600/30 group-hover:to-blue-600/30 transition-colors" />
-              <h3 className="text-xl font-semibold text-white mb-2">{p.title}</h3>
-              <p className="text-sm text-blue-100/80 mb-4">{p.summary}</p>
+              <div className="h-40 rounded-2xl mb-4 bg-center bg-cover" style={{ backgroundImage: p.bg }} />
+              <h3 className="text-lg font-semibold text-slate-900 mb-1">{p.title}</h3>
+              <p className="text-sm text-slate-600 mb-3">{p.summary}</p>
               <div className="flex flex-wrap gap-2">
                 {p.metrics.map((m) => (
-                  <span key={m} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-blue-100">{m}</span>
+                  <span key={m} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">{m}</span>
                 ))}
               </div>
             </motion.div>
